@@ -1,0 +1,214 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+An element providing a solution to no problem in particular.
+
+@demo
+-->
+<dom-module id="rh-p-net">
+
+  <style>
+    :host {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      display: block;
+      box-sizing: border-box;
+    }
+
+    :host  p {
+      position: absolute;
+      color: red;
+      font-size: 1.4em;
+    }
+    ::content p{
+      position: absolute;
+      color: white;
+    }
+  </style>
+
+  <template>
+    
+    <content></content>
+    
+  </template>
+
+</dom-module>
+
+<script>
+
+  Polymer({
+
+    is: 'rh-p-net',
+
+    properties: {
+
+     
+       
+      },
+
+    
+
+    // Element Lifecycle
+
+    ready: function() {
+      // `ready` is called after all elements have been configured, but
+      // propagates bottom-up. This element's children are ready, but parents
+      // are not.
+      //
+      // This is the point where you should make modifications to the DOM (when
+      // necessary), or kick off any processes the element wants to perform.
+    },
+
+    attached: function() {
+      // `attached` fires once the element and its parents have been inserted
+      // into a document.
+      //
+      // This is a good place to perform any work related to your element's
+      // visual state or active behavior (measuring sizes, beginning animations,
+      // loading resources, etc).
+  
+    window.onload = function() {
+  
+
+
+
+    var scope = document.querySelector('template');
+    var pelements = document.querySelectorAll('rh-p-net p');
+    var anewp = new Array(4);
+    var bnewp = new Array(4); 
+    var allps = [];
+    var overlap = false;
+    var rhpnetWidth = document.querySelector('rh-p-net').clientWidth;
+    var rhpnetHeight = document.querySelector('rh-p-net').clientHeight;
+    // console.log(rhpnetWidth.clientWidth);
+
+    if (pelements) {
+      for (var i = 0; i < pelements.length; i++) {
+
+        do{
+          //generate random position
+       //Math.floor(Math.random()*(max-min+1)+min)
+      pelements[i].style.left = Math.floor(Math.random()*(80-20+1)+20) + '%';  
+      pelements[i].style.top =  Math.floor(Math.random()*(80-20+1)+20) + '%';  
+      pelements[i].style.fontSize = Math.floor(Math.random()*(45-13+1)+13)/10 +'em'; 
+      // store random position to bnewp
+      var top = pelements[i].style.top;
+      var right = pelements[i].style.left ;
+      var bottom = pelements[i].style.top ;
+      var left = pelements[i].style.left;
+
+      
+
+      // retype string to number
+      var t = top.match(/\d/g);
+      t = t.join("");
+      t = parseInt(t);
+      var r = right.match(/\d/g);
+      r = r.join("");
+      r = parseInt(r);
+      r = r + (pelements[i].clientWidth*100/rhpnetWidth);
+      var b = bottom.match(/\d/g);
+      b = b.join("");
+      b = parseInt(b);
+      b = b + (pelements[i].clientHeight*100/rhpnetHeight);
+      var l = left.match(/\d/g);
+      l = l.join("");
+      l = parseInt(l);
+
+      // console.log( t + ' ' + r + ' ' + b + ' ' + l);
+      // console.log(pelements[i].innerHTML);
+
+      bnewp = { top: t,
+                right: r,
+                bottom: b,
+                left: l
+              };
+      // console.log(bnewp);
+      // if this  is first p element no overlap detection is needed
+      if (allps.length == 0) {
+        overlap = false;
+
+      }else{
+        for (var i = 0; i < allps.length; i++) {
+          anewp =  { top: allps[i].top ,
+                right: allps[i].right,
+                bottom: allps[i].bottom,
+                left: allps[i].left 
+              };
+              var overlapside = [];
+              overlapside.push(overlaping(anewp,bnewp));
+              overlap = checkTrue(overlapside);
+
+              
+        };
+        
+
+      };
+      
+
+      }while(overlap); 
+
+      allps.push(bnewp);
+
+      };
+    };
+    function checkTrue(array){
+      for (var i = 0; i < array.length; i++) {
+        if (array[i] == true) {
+          return true;
+        };
+        
+      };
+      return false;
+
+    }
+
+    function overlaping(a,b){
+                  var al = a.left;
+                  var ar = a.right;
+                  var bl = b.left;
+                  var br = b.right;
+
+              
+                  var at = a.top;
+                  var ab = a.bottom;
+                  var bt = b.top;
+                  var bb = b.bottom;
+                  // console.log( ' at: ' + at + ' ar: ' + ar + ' ab: ' + ab + ' al: ' + al + ' bt: ' + bt + ' br: ' + br + ' bb: ' + bb + ' bl: ' + bl );
+
+                
+
+                  if (ar > bl && al < br && at < bb && ab > bt) {
+                    return true;
+                  };
+                  return false;
+
+    }
+  };
+
+    
+    },
+
+    detached: function() {
+      // The analog to `attached`, `detached` fires when the element has been
+      // removed from a document.
+      //
+      // Use this to clean up anything you did in `attached`.
+    }
+    
+    
+  });
+
+</script>

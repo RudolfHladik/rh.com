@@ -1,0 +1,25 @@
+{
+  "name": "rh-p-net",
+  "version": "1.0.0",
+  "authors": [
+    "Rudolf Hladik <hladik.rudolf@gmail.com>"
+  ],
+  "description": "An element randomizing position and text sizeof nested p elements",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "rh"
+  ],
+  "main": "rh-p-net.html",
+  "license": "MIT",
+  "homepage": "https://github.com/rudolfhladik/rh-p-net/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  }
+}

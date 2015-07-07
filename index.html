@@ -1,0 +1,329 @@
+<!DOCTYPE HTML>		
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="mobile-web-app-capable" content="yes">
+	<script src="bower_components/webcomponentsjs/webcomponents.js">
+	</script>
+	<link rel="import" href="elements.html">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:900,400italic,100,300,400' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+
+
+	<title></title>
+</head>
+<body class="fullbleed layout vertical" unresolved>
+<!-- <template is="dom-bind"> -->
+<paper-dialog   id="polymer_dialog"
+				with-backdrop
+              	onclick="dismiss(event)">
+					<p>jsem polymer dialog</p>
+					
+</paper-dialog>
+
+
+<!-- puvodni -->
+			<paper-header-panel main 
+					mode="waterfall-tall" 
+					class="flex" id="pc">
+			
+			<paper-toolbar>
+					<div class="middle horizontal layout flex">
+						
+						<span class="flex">
+						<h1>
+							rudolfhladik.com
+						</h1>
+						
+						</span>
+
+						
+						
+					</div>
+			</paper-toolbar>
+
+			<div id="home_content" >
+			<parallax-container>
+
+					<parallax-group z="2" id="group1">
+						<parallax-layer class="base_layer">
+							<div class="content" >
+								<div class="welcome">
+					  				<h3>welcome to my page</h3>
+					  			</div>
+					  			<div class="avatar_div">
+						  			<div id="hexagon"></div>
+						  			<div id="inHex"></div>
+						  			<div id="avatar"></div>
+					  			</div>
+					  			<div class="intro"> 
+					  				<p>my name is Rudolf Hladík, I´m mobile app developer enthusiast with passion for Android platform.</p>
+					  			</div>
+
+
+					  		</div>
+						</parallax-layer>
+						<parallax-layer layer="3">
+							
+					  		<div id="g1l1" class="layer">
+								<div class="triangle-up"></div>
+								<div class="filler">
+								<div id="h2">
+					  			<h2>#interests</h2> 
+					  			</div>
+								
+
+								<div class="interests layout horizontal center justified">
+									<div class="technology layout center vertical justified" id="android">
+																
+										<div class="logo"  >
+											<div class="layout center" style="background-image: url('res/img/dartlogo.svg');"></div>
+											<h5 id="centertitle" class="title">DART</h5>
+										</div>
+										
+										<p class="tech_description">Dart language developed by google running on client and backend, soon will be ported to android.</p>
+											
+										
+
+									</div>
+									<div class="technology layout center vertical justified" id="android">
+																
+										<div class="logo"  >
+											<div class="layout center" style="background-image: url('res/img/android_logo.svg');"></div>
+											<h5 id="centertitle" class="title">ANDROID</h5>
+										</div>
+										
+										<p class="tech_description">Dart language developed by google running on client and backend, soon will be ported to android.</p>
+											
+										
+
+									</div>
+									<div class="technology layout center vertical justified" id="android">
+																
+										<div class="logo"  >
+											<div class="layout center" style="background-image: url('res/img/polymer_logo.svg');opacity: 0.6;"></div>
+											<h5 id="centertitle" class="title">POLYMER</h5>
+										</div>
+										
+										<p class="tech_description">Dart language developed by google running on client and backend, soon will be ported to android.</p>
+											
+										
+
+									</div>
+
+								</div>	
+								
+								<paper-button data-dialog="polymer_dialog" onclick="clickHandler(event, this)" id="pol"></paper-button>
+								
+								</div>
+								<div class="triangle-down" ></div>
+					  		</div>
+								
+						
+						</parallax-layer>
+						
+					</parallax-group>
+
+					<parallax-group z="1" id="group2">
+						<parallax-layer class="base_layer">
+						<rh-p-net>
+							<p>java</p>
+							<p>android</p>
+							<p>android sdk</p>
+							<p>android development</p>
+							<p>mysql</p>
+							<p>php</p>
+							<p>dart</p>
+							<p>polymer</p>
+							<p>bower</p>
+							<p>git</p>
+							<p>github</p>
+							<p>android studio</p>
+							<p>sublime text 3</p>
+							<p>webstorm</p>
+							<p>IntelliJ</p>
+							<p>json</p>
+							<p>HTML</p>
+							<p>CSS</p>
+							<p>javascript</p>
+							<p>genymotion</p>
+							<p>gradle</p>
+						</rh-p-net>
+
+						</parallax-layer>
+						<parallax-layer layer="3">
+							<div class="layer" id="g2l1">
+								<div class="triangle-up"></div>
+								<div class="filler">
+					  			<h2>base</h2> 
+
+
+					  			
+									
+								</div>
+								<div class="triangle-down" ></div>
+							</div>
+						</parallax-layer>
+					</parallax-group>
+					<parallax-group id="group3">
+					<parallax-layer id="about_hook" class="base_layer">
+						</parallax-layer>
+					</parallax-group>
+					
+
+					
+			</parallax-container>
+
+			</div>
+	
+			</paper-header-panel>
+			
+		<!-- </template> -->
+	
+<script>
+
+
+      
+
+    
+
+
+// puvodni
+	var hp = document.querySelector('paper-header-panel');
+	var body = document.querySelector('parallax-container');
+	var mq = window.matchMedia( "(max-width: 480px)" );
+	var base = document.querySelector('#g1l1');
+	var lastPos = 0;
+	var topTriangle = document.querySelectorAll('.triangle-up');
+	var botTriangle = document.querySelectorAll('.triangle-down');
+	var h2 = document.querySelectorAll('#h2');
+	var triUpTreshold = 16;
+	var triDownTreshold = 0;
+	var triangleHeight = triUpTreshold;
+	var angle = 9;
+    var interests = document.querySelector('.interests');
+    var technology = document.querySelectorAll('.technology');
+
+
+
+
+body.onscroll=function(){
+	
+if (mq.matches) {
+	hp.setAttribute("mode", "standard");
+	body.style.height = "calc(100vh - 64px)";
+	scrollRotating();
+	interests.className = "interests layout vertical center justified";
+	
+	
+}else{
+	
+
+	if(body.scrollTop == 0){
+	hp.setAttribute("mode", "waterfall-tall");
+	body.style.height = "calc(100vh - 192px)";
+	// console.log(body.scrollTop);
+	
+		
+
+
+}else{
+	hp.setAttribute("mode", "standard");
+	body.style.height = "calc(100vh - 64px)";
+	// console.log(body.scrollTop);
+	scrollRotating();	
+	
+
+	}
+};
+
+};
+
+function scrollRotating(){
+	//rotating
+	if (lastPos < body.scrollTop) {
+		// console.log('down');
+		lastPos = body.scrollTop;
+		if (topTriangle[0].style.borderBottomWidth != '0vh solid white') {
+			if (triangleHeight > triDownTreshold) {
+				triangleHeight = triangleHeight - 4;
+				angle =  angle - 2.25;
+				for (var i = 0; i < topTriangle.length; i++) {
+				  topTriangle[i].style.borderBottom = triangleHeight + 'vh solid white';
+
+				};
+				for (var i = 0; i < botTriangle.length; i++) {
+					botTriangle[i].style.borderTop = triangleHeight + 'vh solid white';
+				};
+				for (var i = 0; i < h2.length; i++) {
+					h2[i].style.transform = 'rotate(-' + angle + 'deg)';
+				};
+				
+
+			}
+
+		};
+
+
+
+	}else if (lastPos > body.scrollTop) {
+		// console.log('up')
+		lastPos = body.scrollTop;
+		if (topTriangle[0].style.borderBottomWidth != '15vh solid white') {
+			if (triangleHeight < triUpTreshold) {
+				triangleHeight = triangleHeight + 4;
+				angle =  angle + 2.25;
+
+				for (var i = 0; i < topTriangle.length; i++) {
+				  topTriangle[i].style.borderBottom = triangleHeight + 'vh solid white';
+				};
+				for (var i = 0; i < botTriangle.length; i++) {
+					botTriangle[i].style.borderTop = triangleHeight + 'vh solid white';
+				};
+				for (var i = 0; i < h2.length; i++) {
+					h2[i].style.transform = 'rotate(-' + angle + 'deg)';
+
+				};
+			};
+			
+
+		};
+
+	};
+
+
+}
+
+
+
+
+// BUTTONS
+
+ function clickHandler(e, target) {
+      var button = target;
+
+      var id = button.getAttribute('data-dialog');
+      var dialog = document.getElementById(id);
+      var rip = document.querySelector('#dialog_ripple');
+      if (dialog) {
+        dialog.open();
+        
+      }
+    }
+function dismiss(e){
+	var dialog = document.getElementById('polymer');
+
+		dialog.close();	
+
+	
+	
+	
+
+}
+
+
+</script>
+	
+</body>
+</html>
