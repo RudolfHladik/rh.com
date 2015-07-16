@@ -3,24 +3,122 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="mobile-web-app-capable" content="yes">
-	<script src="bower_components/webcomponentsjs/webcomponents.js">
+	<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js">
 	</script>
-	<link rel="import" href="elements.html">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	
 	<link href='http://fonts.googleapis.com/css?family=Roboto:900,400italic,100,300,400' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+	<link rel="import" href="elements.html">
+	<link rel="stylesheet" type="text/css" href="style.css">
 
 
 	<title></title>
 </head>
 <body class="fullbleed layout vertical" unresolved>
 <!-- <template is="dom-bind"> -->
-<paper-dialog   id="polymer_dialog"
+<paper-dialog   id="android_dialog"
 				with-backdrop
-              	onclick="dismiss(event)">
-					<p>jsem polymer dialog</p>
+              	>
+              		<!-- <div> -->
+              		<paper-fab icon="arrow-back" id="fab_app" onclick="dismiss(event)"></paper-fab> 
+              			<h2>SWTOR Utilities</h2>
+              			<div class="layout center horizontal" id="app_header">
+              				<div id="app_header_img1"></div>
+              				<div id="app_header_img2"></div>
+              				<div id="app_header_img3"></div>
+
+              			</div>
+						<p>SWTOR Utility app lets you create your light side and dark side characters and save their different build setups. You can also browse every utility description of all classes. All these features with nice and clean material design. Since the app is still in testing stage if you want to try it you can download source code from my GitHub. Link is provided in contact section in the bottom of the page. Or you can email me and I will send you the .apk file. If you have any comment on function or design or feature advice feel free to email me as well.</p>
+						<div class="divider"></div>
+              			<h2>build with</h2>
+
+						<div class="layout center horizontal justified" id="app_tools">
+							<div class="tool">
+								<div style="background: url(res/img/android_studio_icon.png) center / contain no-repeat;"></div>
+								<h6 >Android studio</h6>
+								<p>Official IDE for Android platform development. It is based on JetBrains' IntelliJ IDEA and has already available stable release since december 2014 and is also available for all major OSs (Windows, Mac OS X, Linux). </p>
+							</div>
+							<div class="tool">
+								<div style="background: url(res/img/genymotion_icon.png) center / contain no-repeat;" ></div>
+								<h6>Genymotion</h6>
+								<p>Emulator to run and test your Android apps. You can choose lot of devices with different screen sizes, DPI ratio and even OS versions. Also available on all major OS platforms.</p>
+							</div>
+							<div class="tool">
+								<div style="background: url(res/img/gimp_icon.png) center / contain no-repeat;"></div>
+								<h6>Gimp</h6>
+								<p>GNU Image Manipulation Program for such tasks as photo retouching and image composition. Easily extensible with plugins. Runs on Unix platform but also on Windows and Mac OS X.</p>
+							</div>
+
+						</div>
+
+
+					<!-- </div> -->
 					
 </paper-dialog>
+<paper-dialog   id="locslides_dialog"
+				with-backdrop
+              	>
+              	<paper-fab icon="arrow-back" id="fab_app" onclick="dismiss(event)"></paper-fab> 
+              			<h2>LocSlides</h2>
+              			<div class="layout center vertical" id="app_header">
+              				<div id="app_header_img1" style="background: url(res/img/locslides.jpg) center / contain; background-repeat: no-repeat; width: 50%;"></div>
+              				
+
+              			</div>
+						<p>LocSlides is web application completly developed with Dart and Polymer(0.5*). It is translated to JavaScript with Dart2JS library to be available on all major web browsers. It automaticaly generates content from two json files and picture folder. It was created to interactively show where the different groups of people come from and show theirs most popular sights and landmarks. In future I plan to make graphical interface to help deploy this app to any site.</p>
+						<p style="font-size:0.7em; text-align: right;">*Polymer 1.0 is not yet available for Dart. As soon as it will be I'll try to migrate it.</p>
+						<div class="divider"></div>
+              			<h2>build with</h2>
+
+						<div class="layout center horizontal justified" id="app_tools">
+							<div class="tool" style="width:45%;">
+								<div style="background: url(res/img/Intellij-Idea.png) center / contain no-repeat;"></div>
+								<h6 >IntelliJ IDEA CE</h6>
+								<p>Community edition Java IDE developed by JetBrains. Capable of enterprise, mobile and web development. Offers language plugins (Ruby, PHP, Python, Dart..) </p>
+							</div>
+							
+							<div class="tool" style="width:45%;">
+								<div style="background: url(res/img/chrome.png) center / contain no-repeat;"></div>
+								<h6>Chrome Dev Tools</h6>
+								<p>Set of developer tools integrated into Google Chrome browser. Helps with debuging and testing web applications.</p>
+							</div>
+
+						</div>
+					
+					
+</paper-dialog>
+<paper-dialog   id="polymer_dialog"
+				with-backdrop
+              	>
+					<paper-fab icon="arrow-back" id="fab_app" onclick="dismiss(event)"></paper-fab> 
+              			<h2>rh-p-net</h2>
+              			<div class="layout center vertical" id="app_header">
+              				
+              				<div id="app_header_img2" style="background: url(res/img/random_p.jpg) center / contain; background-repeat: no-repeat; width: 50%;"></div>
+              				
+
+              			</div>
+						<p>Simple reusable custom element, made with Polymer 1.0. It takes all &ltp&gt elements randomly resize them and randomly position them in the &ltrh-p-net&gt element so it requires to have appropriate width and height. It also tries all &ltp&gt elements to not overlap each other, but I'm still working on this feature. In future it should be able to choose limit points for random generated font-size values and positions via html attribute. </p>
+						<div class="divider"></div>
+              			<h2>build with</h2>
+
+						<div class="layout center horizontal justified" id="app_tools">
+							<div class="tool" style="width:45%;">
+								<div style="background: url(res/img/Sublime_Text_Logo.png) center / contain no-repeat;"></div>
+								<h6 >Sublime Text 3</h6>
+								<p>Cross-platform source code and text editor with native support for more than 40 programming and markup languages. Easily enhanceable with community-build plugins.</p>
+							</div>
+							<div class="tool" style="width:45%;">
+								<div style="background: url(res/img/Bower.svg) center / contain no-repeat;" ></div>
+								<h6>Bower</h6>
+								<p>Package management system for web sites allowing you to manage libraries, frameworks, assets, utilities.. with one simple and powerful tool.</p>
+							</div>
+							
+
+						</div>
+					
+</paper-dialog>
+
 
 
 <!-- puvodni -->
@@ -30,17 +128,23 @@
 			
 			<paper-toolbar>
 					<div class="middle horizontal layout flex">
-						
+						<a href="#home"><div id="logo" style="background: url(res/img/rh_logo.svg) center / contain;"></div></a>
 						<span class="flex">
 						<h1>
 							rudolfhladik.com
 						</h1>
 						
+						
 						</span>
 
 						
-						
 					</div>
+						<paper-icon-button onclick="menuClick(event, this)" icon="more-vert" ></paper-icon-button>
+						<paper-menu id="menu">
+						 <paper-item id="menuItemContact" onclick="menuItemClick(event, this)" >contact</paper-item>
+						  <paper-item>credits</paper-item>
+						</paper-menu>
+
 			</paper-toolbar>
 
 			<div id="home_content" >
@@ -48,9 +152,10 @@
 
 					<parallax-group z="2" id="group1">
 						<parallax-layer class="base_layer">
-							<div class="content" >
+							<div class="content" id="group1bg">
+
 								<div class="welcome">
-					  				<h3>welcome to my page</h3>
+					  				<h3 id="home">welcome to my page</h3>
 					  			</div>
 					  			<div class="avatar_div">
 						  			<div id="hexagon"></div>
@@ -61,8 +166,9 @@
 					  				<p>my name is Rudolf Hladík, I´m mobile app developer enthusiast with passion for Android platform.</p>
 					  			</div>
 
-
 					  		</div>
+
+					  		
 						</parallax-layer>
 						<parallax-layer layer="3">
 							
@@ -75,38 +181,38 @@
 								
 
 								<div class="interests layout horizontal center justified">
-									<div class="technology layout center vertical justified" id="android">
+									<div class="technology layout center vertical justified">
 																
 										<div class="logo"  >
-											<div class="layout center" style="background-image: url('res/img/dartlogo.svg');"></div>
+											<div class="layout center" id="dart" ></div>
 											<h5 id="centertitle" class="title">DART</h5>
 										</div>
 										
-										<p class="tech_description">Dart language developed by google running on client and backend, soon will be ported to android.</p>
+										<p class="tech_description">Dart is an open-source, scalable programming language, with robust libraries and runtimes, for building web, server, and mobile apps.</p>
 											
 										
 
 									</div>
-									<div class="technology layout center vertical justified" id="android">
+									<div class="technology layout center vertical justified">
 																
 										<div class="logo"  >
-											<div class="layout center" style="background-image: url('res/img/android_logo.svg');"></div>
+											<div id="android" class="layout center" ></div>
 											<h5 id="centertitle" class="title">ANDROID</h5>
 										</div>
 										
-										<p class="tech_description">Dart language developed by google running on client and backend, soon will be ported to android.</p>
+										<p class="tech_description">Modern mobile operating system based on Linux kernel. Distributed as open source with over Billion end users.</p>
 											
 										
 
 									</div>
-									<div class="technology layout center vertical justified" id="android">
+									<div class="technology layout center vertical justified">
 																
 										<div class="logo"  >
-											<div class="layout center" style="background-image: url('res/img/polymer_logo.svg');opacity: 0.6;"></div>
+											<div id="polymer" class="layout center" ></div>
 											<h5 id="centertitle" class="title">POLYMER</h5>
 										</div>
 										
-										<p class="tech_description">Dart language developed by google running on client and backend, soon will be ported to android.</p>
+										<p class="tech_description">Library for creating Web Components = custom HTML elements. You can do stuff like this &ltawesome-element&gt&lt/awesome-element&gt.</p>
 											
 										
 
@@ -127,6 +233,11 @@
 
 					<parallax-group z="1" id="group2">
 						<parallax-layer class="base_layer">
+						<div class="content" id="group2bg">
+
+						</div>
+						
+
 						<rh-p-net>
 							<p>java</p>
 							<p>android</p>
@@ -149,15 +260,53 @@
 							<p>javascript</p>
 							<p>genymotion</p>
 							<p>gradle</p>
-						</rh-p-net>
 
+						</rh-p-net>
 						</parallax-layer>
 						<parallax-layer layer="3">
 							<div class="layer" id="g2l1">
 								<div class="triangle-up"></div>
 								<div class="filler">
-					  			<h2>base</h2> 
+					  			<h2> my projects </h2> 
+					  			<div class="interests layout horizontal center justified">
+									<div class="technology layout center vertical justified" >
+																
+										<div class="logo" style="background: url('res/img/DFG_2015-02-23-22-09-15.png') top / cover; background-repeat: no-repeat;  background-color: rgba(0, 188, 212, 1); background-blend-mode: multiply; " >
+											<div style="background: url('res/img/phone_noun_9348_cc.svg') center / contain; background-repeat: no-repeat;"></div>
+											<h5 id="centertitle" class="title">SWTOR Utilities App</h5>
+										</div>
+										
+										<p class="tech_description">Android app which helps you keep track of your utility points.</p>
+										<paper-button onclick="clickHandler(event, this)" data-dialog="android_dialog" id="swtor_app" >more</paper-button>	
+										
 
+									</div>
+									<div class="technology layout center vertical justified" >
+																
+										<div class="logo" style="background: url('res/img/locslides.jpg') top / cover; background-repeat: no-repeat; background-color: rgba(0, 188, 212, 1); background-blend-mode: multiply;" >
+											<div class="layout center" style="background: url('res/img/web_noun_61656_cc.svg') center / contain; background-repeat: no-repeat;"></div>
+											<h5 id="centertitle" class="title">LocSlides</h5>
+										</div>
+										
+										<p class="tech_description">Web app which shows location based data with pictures slideshow.</p>
+											<paper-button onclick="clickHandler(event, this)" data-dialog="locslides_dialog" id="locslides">info</paper-button>
+										
+
+									</div>
+									<div class="technology layout center vertical justified" >
+																
+										<div class="logo"  style="background: url('res/img/random_p.jpg')top / cover; background-repeat: no-repeat; background-color: rgba(0, 188, 212, 1); background-blend-mode: multiply;">
+											<div class="layout center" style="background: url('res/img/code_noun_17547_cc.svg') center / contain; background-repeat: no-repeat; "></div>
+											<h5 id="centertitle" class="title">rh-p-net</h5>
+										</div>
+										
+										<p class="proj_description">Custom reusable html element build with Polymer 1.0.</p>
+											
+										<paper-button onclick="clickHandler(event, this)" data-dialog="polymer_dialog" toggles="false" id="rh_element">about</paper-button>
+
+									</div>
+
+								</div>	
 
 					  			
 									
@@ -168,16 +317,62 @@
 					</parallax-group>
 					<parallax-group id="group3">
 					<parallax-layer id="about_hook" class="base_layer">
+						<div class="content" id="group3bg">
+						<div id="contact" class="contact">
+
+							<h2 style="z-index: 10;">contact me</h2>
+							
+							<!-- <div class="contact_form"> -->
+
+								<div id="greenEffect"></div>
+								
+								<div id="purpleEffect"></div>
+								
+
+								<div class="green">
+									<p>Interested in working together? Get in touch via any of these options</p>
+									
+										<div class="avatar_div">
+							  				<div onclick="socialClick(event, this)" id="github" class="socialHex"></div>
+							  				
+							  				<div onclick="socialClick(event, this)" id="linkedin" class="socialHex"></div>
+							  				
+							  				
+						  				</div>
+						  			
+						  			
+								
+						  			
+
+									
+								</div>
+								<div class="purple" >
+									
+									<p>Rudolf Hladík</p>
+									<p>Paris Area, France</p>
+									<p>tel: +330783906191</p>
+									<p>mail: job@rudolfhladik.com</p>
+									
+								</div>
+							
+								
+							<!-- </div> -->
+							
+						</div>
+						</div>
 						</parallax-layer>
 					</parallax-group>
 					
 
-					
+					<!-- <footer id="footer">
+						made with love by Rudolf Hladik
+					</footer> -->
 			</parallax-container>
 
 			</div>
-	
+			
 			</paper-header-panel>
+			
 			
 		<!-- </template> -->
 	
@@ -202,11 +397,21 @@
 	var triDownTreshold = 0;
 	var triangleHeight = triUpTreshold;
 	var angle = 9;
-    var interests = document.querySelector('.interests');
+    var interests = document.querySelectorAll('.interests');
     var technology = document.querySelectorAll('.technology');
+    var menuShowed = false;
+    var tool = document.querySelectorAll('#app_tools');
 
+document.querySelector('body').addEventListener("click", function(){
+    var menu = document.getElementById('menu');
+    if (menuShowed == true) {
+		menuShowed = false;
+    }else{
+	menu.style.display = 'none';
 
-
+    };
+	console.log('bodyClick');
+});
 
 body.onscroll=function(){
 	
@@ -214,7 +419,14 @@ if (mq.matches) {
 	hp.setAttribute("mode", "standard");
 	body.style.height = "calc(100vh - 64px)";
 	scrollRotating();
-	interests.className = "interests layout vertical center justified";
+	for (var i = 0; i < interests.length; i++) {
+		interests[i].className = "interests layout vertical center justified";
+		
+	};
+	for (var i = 0; i < tool.length; i++) {
+		tool[i].className = "layout vertical center justified";
+	};
+	
 	
 	
 }else{
@@ -300,26 +512,60 @@ function scrollRotating(){
 
 // BUTTONS
 
+
  function clickHandler(e, target) {
       var button = target;
 
       var id = button.getAttribute('data-dialog');
       var dialog = document.getElementById(id);
-      var rip = document.querySelector('#dialog_ripple');
+      // var rip = document.querySelector('#dialog_ripple');
       if (dialog) {
         dialog.open();
         
       }
     }
 function dismiss(e){
-	var dialog = document.getElementById('polymer');
+	var dialog = document.getElementById('android_dialog');
+	var dialog2 = document.getElementById('locslides_dialog');
+	var dialog3 = document.getElementById('polymer_dialog');
+	var menu = document.getElementById('menu');
+	menu.style.display = 'none';
 
 		dialog.close();	
+		dialog2.close();
+		dialog3.close();
 
-	
-	
-	
+}
+function menuClick(e, target){
+	var menu = document.getElementById('menu');
+	console.log(menu);
+	menu.style.display = 'inline-block';
+	menuShowed = true;
+}
+function menuItemClick(e, target){
+	var button = target;
+	if (target.id == "menuItemContact" ) {
+	window.location.href = "#contact";
+	var menu = document.getElementById('menu');
+	menu.style.display = 'none';
 
+
+	};
+
+}
+function socialClick(e, target){
+	var button = target;
+	switch(button.id){
+		case "linkedin": console.log('linkedin clicked');
+				window.location.href = 'https://fr.linkedin.com/in/rudolfhladik';
+			break;
+						
+		case "github": console.log('github clicked');
+				window.location.href = 'https://github.com/RudolfHladik';
+
+			break;
+		
+	}
 }
 
 
